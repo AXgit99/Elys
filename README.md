@@ -8,7 +8,8 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install curl git wget htop tmux build-essential jq make lz4 gcc unzip -y
 ```
 
-# install go, if needed
+**install go, if needed**
+```
 cd $HOME
 VER="1.21.3"
 wget "https://golang.org/dl/go$VER.linux-amd64.tar.gz"
@@ -19,21 +20,26 @@ rm "go$VER.linux-amd64.tar.gz"
 echo "export PATH=$PATH:/usr/local/go/bin:~/go/bin" >> ~/.bash_profile
 source $HOME/.bash_profile
 [ ! -d ~/go/bin ] && mkdir -p ~/go/bin
+```
 
-# set vars
+**set vars**
+```
 echo "export WALLET="wallet"" >> $HOME/.bash_profile
 echo "export MONIKER="test"" >> $HOME/.bash_profile
 echo "export ELYS_CHAIN_ID="elystestnet-1"" >> $HOME/.bash_profile
 echo "export ELYS_PORT="38"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
+```
 
-# download binary
+**download binary**
+```
 cd $HOME
 rm -rf elys
 git clone https://github.com/elys-network/elys.git
 cd elys
 git checkout v0.41.1
 make install
+```
 
 # config and init app
 elysd config node tcp://localhost:${ELYS_PORT}657

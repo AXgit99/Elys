@@ -41,11 +41,13 @@ git checkout v0.41.1
 make install
 ```
 
-# config and init app
+**config and init app**
+```
 elysd config node tcp://localhost:${ELYS_PORT}657
 elysd config keyring-backend os
 elysd config chain-id elystestnet-1
 elysd init "test" --chain-id elystestnet-1
+```
 
 # download genesis and addrbook
 wget -O $HOME/.elys/config/genesis.json https://server-4.itrocket.net/testnet/elys/genesis.json

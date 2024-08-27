@@ -63,7 +63,8 @@ sed -i -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*seeds *=.*/seeds = \"$SEEDS\"/}" \
        -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*persistent_peers *=.*/persistent_peers = \"$PEERS\"/}" $HOME/.elys/config/config.toml
 ```
 
-# set custom ports in app.toml
+**set custom ports in app.toml**
+```
 sed -i.bak -e "s%:1317%:${ELYS_PORT}317%g;
 s%:8080%:${ELYS_PORT}080%g;
 s%:9090%:${ELYS_PORT}090%g;
@@ -71,8 +72,9 @@ s%:9091%:${ELYS_PORT}091%g;
 s%:8545%:${ELYS_PORT}545%g;
 s%:8546%:${ELYS_PORT}546%g;
 s%:6065%:${ELYS_PORT}065%g" $HOME/.elys/config/app.toml
+```
 
-# set custom ports in config.toml file
+**set custom ports in config.toml file**
 sed -i.bak -e "s%:26658%:${ELYS_PORT}658%g;
 s%:26657%:${ELYS_PORT}657%g;
 s%:6060%:${ELYS_PORT}060%g;

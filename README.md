@@ -82,12 +82,14 @@ s%:26656%:${ELYS_PORT}656%g;
 s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${ELYS_PORT}656\"%;
 s%:26660%:${ELYS_PORT}660%g" $HOME/.elys/config/config.toml
 
-# config pruning
+**config pruning**
+```
 sed -i -e "s/^pruning *=.*/pruning = \"custom\"/" $HOME/.elys/config/app.toml
 sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME/.elys/config/app.toml
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"50\"/" $HOME/.elys/config/app.toml
+```
 
-# set minimum gas price, enable prometheus and disable indexing
+s**et minimum gas price, enable prometheus and disable indexing**
 sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "0.0018ibc/2180E84E20F5679FCC760D8C165B60F42065DEF7F46A72B447CFF1B7DC6C0A65,0.00025ibc/E2D2F6ADCC68AA3384B2F5DFACCA437923D137C14E86FB8A10207CF3BED0C8D4,0.00025uelys"|g' $HOME/.elys/config/app.toml
 sed -i -e "s/prometheus = false/prometheus = true/" $HOME/.elys/config/config.toml
 sed -i -e "s/^indexer *=.*/indexer = \"null\"/" $HOME/.elys/config/config.toml

@@ -124,7 +124,8 @@ if curl -s --head curl https://server-4.itrocket.net/testnet/elys/elys_2024-08-1
 fi
 ```
 
-# enable and start service
+**enable and start service**
+```
 sudo systemctl daemon-reload
 sudo systemctl enable elysd
 sudo systemctl restart elysd && sudo journalctl -u elysd -f
@@ -132,7 +133,9 @@ Automatic Installation
 pruning: custom: 100/0/10 | indexer: null
 
 source <(curl -s https://itrocket.net/api/testnet/elys/autoinstall/)
-Create wallet
+```
+
+**Create wallet**
 # to create a new wallet, use the following command. don’t forget to save the mnemonic
 elysd keys add $WALLET
 

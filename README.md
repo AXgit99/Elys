@@ -142,10 +142,12 @@ elysd keys add $WALLET
 ```
 
 **to restore exexuting wallet, use the following command**
+```
 elysd keys add $WALLET --recover
+```
 
 **save wallet and validator address**
-
+```
 WALLET_ADDRESS=$(elysd keys show $WALLET -a)
 VALOPER_ADDRESS=$(elysd keys show $WALLET --bech val -a)
 echo "export WALLET_ADDRESS="$WALLET_ADDRESS >> $HOME/.bash_profile

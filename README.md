@@ -161,9 +161,12 @@ elysd status 2>&1 | jq
 ```
 
 **before creating a validator, you need to fund your wallet and check balance**
+```
+elysd query bank balances $WALLET_ADDRESS
+```
 
-elysd query bank balances $WALLET_ADDRESS 
-Create validator
+**Create validator**
+
 Moniker
 Identity
 Details

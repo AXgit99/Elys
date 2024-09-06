@@ -166,7 +166,7 @@ elysd query bank balances $WALLET_ADDRESS
 ```
 
 **Create validator**
-
+```
 Moniker
 Identity
 Details
@@ -195,7 +195,9 @@ elysd tx staking create-validator \
 --chain-id elystestnet-1 \
 --gas auto --gas-adjustment 1.5 --fees 100uelys \
 -y
-Monitoring
+```
+
+**Monitoring**
 If you want to have set up a monitoring and alert system use our cosmos nodes monitoring guide with tenderduty
 
 Security

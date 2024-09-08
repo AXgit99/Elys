@@ -167,19 +167,6 @@ elysd query bank balances $WALLET_ADDRESS
 
 **Create validator**
 ```
-Moniker
-Identity
-Details
-I love blockchain ❤️
-Amount, uelys
-1000000
-Commission rate
-0.1
-Commission max rate
-0.2
-Commission max change rate
-0.01
-Website
 elysd tx staking create-validator \
 --amount 1000000uelys \
 --from $WALLET \
